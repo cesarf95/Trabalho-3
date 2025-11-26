@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquivo 2050 - Objetos do Futuro</title>
+
+    <link href="https://fonts.cdnfonts.com/css/neuropol" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body class="fade-in">
+
+    <!-- =================== LOADER / LOGIN =================== -->
+    <div id="loader">
+        <div class="glitch-form-wrapper">
+
+            <form class="glitch-card" id="login-form">
+
+                <h2 class="glitch-title">SECURE_ACCESS</h2>
+
+                <!-- USUÁRIO -->
+                <div class="form-group">
+                    <label for="username" class="form-label">USUÁRIO</label>
+                    <input type="text" id="username" name="username" class="glitch-input" required>
+                </div>
+
+                <!-- SENHA -->
+                <div class="form-group">
+                    <label for="password" class="form-label">SENHA</label>
+                    <input type="password" id="password" name="password" class="glitch-input" required>
+                </div>
+
+                <!-- BOTÃO -->
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">ENTRAR</span>
+                </button>
+
+                <!-- AVISO DE ERRO -->
+                <p id="login-error" class="error-msg"></p>
+
+            </form>
+
+        </div>
+    </div>
+    <!-- =================== FIM DO LOADER =================== -->
+
+
+
+    <!-- =================== CONTEÚDO DO SITE =================== -->
+    <header class="hero-section">
+        <h1> ⌛Museu do Futuro⏳ </h1>
+        <p class="subtitle">
+            Interfaces e tecnologias essenciais na distopia ciber-climatizada do futuro próximo.
+        </p>
+
+        <!-- BOTÃO MODO ENERGIA -->
+        <button id="toggle-future-mode" aria-label="Ativar ou desativar o modo futurista">
+            💡Modo Energia💡
+        </button>
+    </header>
+
+    <main>
+        <section class="futuristic-objects">
+
+            <article class="object-card" id="object-1">
+                <h3>Bio-Regulador Chronos</h3>
+                <div class="illustration">
+                    <img src="assets/pipula2.png" alt="Cápsula de longevidade futurista">
+                </div>
+                <p class="description">
+                    Micro-cápsula bio-sintética que otimiza o metabolismo e o ciclo circadiano, garantindo 100% de eficiência cognitiva.
+                </p>
+            </article>
+
+            <article class="object-card" id="object-2">
+                <h3>Purificador Atmosférico Pessoal (AQUA-NET)</h3>
+                <div class="illustration">
+                    <img src="assets/aquanet.png" alt="Dispositivo que cria água a partir do ar">
+                </div>
+                <p class="description">
+                    Gerador compacto de água potável que extrai a umidade de ambientes poluídos.
+                </p>
+            </article>
+
+            <article class="object-card" id="object-3">
+                <h3>AI Holográfica Domiciliar (NEXUS-3)</h3>
+                <div class="illustration">
+                    <img src="assets/holo 3.png" alt="Projeção holográfica futurista">
+                </div>
+                <p class="description">
+                    Assistente de gestão de vida que projeta interfaces de dados no ar.
+                </p>
+            </article>
+
+        </section>
+
+        <section class="timeline-section">
+            <h3>JANELA DE IMPLEMENTAÇÃO</h3>
+            <div class="timeline">
+                <span class="year start-year">2025</span>
+                <div class="timeline-bar"></div>
+                <span class="year end-year">2050</span>
+            </div>
+        </section>
+    </main>
+
+    <script src="script/script.js"></script>
+</body>
+</html>

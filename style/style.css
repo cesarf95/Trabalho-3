@@ -1,0 +1,317 @@
+/* ===================== RESET ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Neuropol', sans-serif;
+    background: #060606;
+    color: white;
+    overflow: hidden; /* Bloqueia scroll até login sumir */
+}
+
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+}
+
+/* ===================== LOADER / LOGIN ===================== */
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #0a0a0a, #000000 80%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.glitch-form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.glitch-card {
+    background: #0d0d0d;
+    border: 1px solid #18ffff70;
+    width: 320px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px #18ffff50;
+    position: relative;
+    animation: cardGlow 2s infinite alternate;
+}
+
+.glitch-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 23px;
+    letter-spacing: 2px;
+    color: #18ffff;
+    text-shadow: 0 0 8px #18ffff;
+}
+
+/* CAMPOS */
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: #9bffff;
+    letter-spacing: 1px;
+}
+
+.glitch-input {
+    background: #050505;
+    border: 1px solid #18ffff90;
+    padding: 10px;
+    border-radius: 6px;
+    color: #bff;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.glitch-input:focus {
+    box-shadow: 0 0 10px #18ffff;
+}
+
+/* BOTÃO */
+.submit-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    background: #18ffff;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 0 12px #18ffff;
+    transition: 0.2s;
+}
+
+.submit-btn:hover {
+    background: #0ff;
+    box-shadow: 0 0 20px #18ffff;
+}
+
+.error-msg {
+    margin-top: 10px;
+    text-align: center;
+    color: #ff5050;
+    font-size: 14px;
+    min-height: 18px;
+}
+
+/* ANIMAÇÃO loader desaparecer */
+.loader-hide {
+    animation: hideLoader 1s forwards;
+}
+
+@keyframes hideLoader {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* ===================== HERO / CABEÇALHO ===================== */
+
+.hero-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+#toggle-future-mode {
+    margin-top: 25px;
+    padding: 12px 20px;
+    background: #181818;
+    border: 1px solid #18ffff60;
+    color: #18ffff;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+#toggle-future-mode:hover {
+    background: #111;
+    box-shadow: 0 0 15px #18ffff;
+}
+
+/* ===================== CARDS ===================== */
+
+.futuristic-objects {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+.object-card {
+    background: #111;
+    padding: 20px;
+    width: 280px;
+    border-radius: 12px;
+    border: 1px solid #18ffff40;
+    box-shadow: 0 0 12px #18ffff30;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.object-card img {
+    width: 140px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* ===================== TIMELINE ===================== */
+
+.timeline-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.timeline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.timeline-bar {
+    width: 200px;
+    height: 4px;
+    background: #18ffff;
+    box-shadow: 0 0 10px #18ffff;
+}
+
+.year {
+    font-size: 18px;
+}
+
+/* ===================== ANIMAÇÕES ===================== */
+
+@keyframes cardGlow {
+    from {
+        box-shadow: 0 0 10px #18ffff80;
+    }
+    to {
+        box-shadow: 0 0 20px #18ffffc0;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===================== HOVER ANIMADO (REQUISITO DO PDF) ===================== */
+
+.object-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #18ffff;
+    animation: pulse 0.7s ease-in-out infinite alternate;
+}
+
+/* Pulso suave */
+@keyframes pulse {
+    from {
+        transform: scale(1.05);
+    }
+    to {
+        transform: scale(1.09);
+    }
+}
+
+/* ===================== MODO ENERGIA (Azul Neon) ===================== */
+
+.future-mode {
+    background: linear-gradient(180deg, #00131a, #002028, #003844);
+    color: #b9f6ff;
+    transition: background 0.6s ease, color 0.3s ease;
+}
+
+/* ---- HEADER ---- */
+.future-mode .hero-section {
+    background: transparent;
+}
+
+.future-mode .hero-section h1 {
+    color: #66f7ff;
+    text-shadow: 0 0 15px #00eaff, 0 0 30px #00eaff;
+}
+
+.future-mode .subtitle {
+    color: #b9f6ff;
+}
+
+/* ---- BOTÃO MODO ENERGIA ---- */
+.future-mode #toggle-future-mode {
+    background: #001e26;
+    border: 1px solid #00f2ff;
+    color: #00eaff;
+    box-shadow: 0 0 15px #00eaff;
+}
+
+.future-mode #toggle-future-mode:hover {
+    background: #00303c;
+    box-shadow: 0 0 25px #00eaff;
+}
+
+/* ---- CARDS ---- */
+.future-mode .object-card {
+    background: #002c36;
+    border: 1px solid #00eaff80;
+    box-shadow: 0 0 20px #00d8ff50;
+    color: #bffaff;
+}
+
+.future-mode .object-card:hover {
+    box-shadow: 0 0 30px #00eaff;
+    transform: scale(1.07);
+}
+
+.future-mode .object-card img {
+    filter: drop-shadow(0 0 15px #00eaff);
+}
+
+/* ---- TIMELINE ---- */
+.future-mode .timeline-bar {
+    background: #00eaff;
+    box-shadow: 0 0 20px #00eaff;
+}
+
+.future-mode .year {
+    color: #7df9ff;
+}
+
+/* ---- SCROLL LIBERADO ---- */
+.future-mode body {
+    overflow: auto;
+}
