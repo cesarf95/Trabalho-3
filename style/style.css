@@ -1,317 +1,523 @@
 /* ===================== RESET ===================== */
+/* Linha 1: Seção de redefinição de estilos básicos (CSS Reset) para garantir consistência entre navegadores. */
 * {
+    /* Linha 3: Seletor universal (*), aplica-se a todos os elementos. */
     margin: 0;
+    /* Linha 4: Remove a margem padrão de todos os elementos. */
     padding: 0;
+    /* Linha 5: Remove o preenchimento (padding) padrão de todos os elementos. */
     box-sizing: border-box;
+    /* Linha 6: Define o modelo de caixa como 'border-box', garantindo que padding e borda sejam incluídos na largura e altura do elemento. */
 }
 
 body {
+    /* Linha 9: Estilos aplicados ao corpo inteiro da página. */
     font-family: 'Neuropol', sans-serif;
+    /* Linha 10: Define a fonte principal (importada no HTML) com fallback para sans-serif. */
     background: #060606;
+    /* Linha 11: Fundo muito escuro/preto para o tema Cyberpunk padrão. */
     color: white;
+    /* Linha 12: Cor do texto padrão é branco. */
     overflow: hidden; /* Bloqueia scroll até login sumir */
+    /* Linha 13: ESCONDE as barras de rolagem. O JS deve liberar isso após o login. */
 }
 
 .fade-in {
+    /* Linha 16: Estilo inicial para a animação de entrada (aplicado ao <body> no HTML). */
     animation: fadeIn 1s ease forwards;
+    /* Linha 17: Aplica a animação 'fadeIn' por 1 segundo, com suavização, mantendo o estado final ('forwards'). */
     opacity: 0;
+    /* Linha 18: Começa com opacidade zero (invisível) antes de a animação começar. */
 }
 
 /* ===================== LOADER / LOGIN ===================== */
+/* Linha 21: Início da seção de estilos para a tela de login. */
 
 #loader {
+    /* Linha 23: Estilos aplicados ao contêiner de login/loader (ID único). */
     position: fixed;
+    /* Linha 24: Fixa o elemento na viewport, cobrindo toda a tela. */
     top: 0;
+    /* Linha 25: Posição no topo. */
     left: 0;
+    /* Linha 26: Posição à esquerda. */
     width: 100%;
+    /* Linha 27: Ocupa toda a largura. */
     height: 100%;
+    /* Linha 28: Ocupa toda a altura. */
     background: radial-gradient(circle, #0a0a0a, #000000 80%);
+    /* Linha 29: Gradiente radial sutil para o fundo do loader. */
     display: flex;
+    /* Linha 30: Ativa o modelo Flexbox para alinhamento. */
     justify-content: center;
+    /* Linha 31: Centraliza o conteúdo horizontalmente. */
     align-items: center;
+    /* Linha 32: Centraliza o conteúdo verticalmente. */
     z-index: 9999;
+    /* Linha 33: Garante que o loader fique acima de todo o resto do conteúdo. */
 }
 
 .glitch-form-wrapper {
+    /* Linha 36: Estilos para o wrapper do formulário. */
     display: flex;
+    /* Linha 37: Ativa Flexbox. */
     justify-content: center;
+    /* Linha 38: Centraliza o formulário. */
     align-items: center;
+    /* Linha 39: Centraliza o formulário. */
     width: 100%;
+    /* Linha 40: Largura total dentro do #loader. */
 }
 
 .glitch-card {
+    /* Linha 43: Estilos para o cartão de login principal. */
     background: #0d0d0d;
+    /* Linha 44: Fundo cinza bem escuro para o cartão. */
     border: 1px solid #18ffff70;
+    /* Linha 45: Borda fina de ciano-neon com transparência. */
     width: 320px;
+    /* Linha 46: Largura fixa do cartão. */
     padding: 30px;
+    /* Linha 47: Preenchimento interno. */
     border-radius: 12px;
+    /* Linha 48: Cantos arredondados. */
     box-shadow: 0 0 25px #18ffff50;
+    /* Linha 49: Sombra que simula um brilho neon ciano. */
     position: relative;
+    /* Linha 50: Necessário para possíveis efeitos de glitch via ::before/::after ou animação. */
     animation: cardGlow 2s infinite alternate;
+    /* Linha 51: Aplica a animação de brilho pulsante definida abaixo. */
 }
 
 .glitch-title {
+    /* Linha 54: Estilos para o título "SECURE_ACCESS". */
     text-align: center;
+    /* Linha 55: Centraliza o texto. */
     margin-bottom: 20px;
+    /* Linha 56: Espaço abaixo do título. */
     font-size: 23px;
+    /* Linha 57: Tamanho da fonte. */
     letter-spacing: 2px;
+    /* Linha 58: Espaçamento entre as letras. */
     color: #18ffff;
+    /* Linha 59: Cor ciano brilhante. */
     text-shadow: 0 0 8px #18ffff;
+    /* Linha 60: Adiciona um brilho ao texto para o efeito neon. */
 }
 
 /* CAMPOS */
+/* Linha 63: Estilos para os grupos de campos do formulário. */
 .form-group {
+    /* Linha 65: Estilos para o contêiner de rótulo + input. */
     margin-bottom: 18px;
+    /* Linha 66: Espaçamento entre os grupos de formulário. */
     display: flex;
+    /* Linha 67: Ativa Flexbox. */
     flex-direction: column;
+    /* Linha 68: Coloca os itens (rótulo e input) em coluna. */
 }
 
 .form-label {
+    /* Linha 71: Estilos para o rótulo ("USUÁRIO", "SENHA"). */
     margin-bottom: 6px;
+    /* Linha 72: Espaço entre o rótulo e o campo de input. */
     font-size: 13px;
+    /* Linha 73: Fonte menor. */
     color: #9bffff;
+    /* Linha 74: Ciano mais claro/pastel. */
     letter-spacing: 1px;
+    /* Linha 75: Espaçamento de letras. */
 }
 
 .glitch-input {
+    /* Linha 78: Estilos para os campos de input de texto e senha. */
     background: #050505;
+    /* Linha 79: Fundo quase preto para o campo. */
     border: 1px solid #18ffff90;
+    /* Linha 80: Borda ciano-neon semitransparente. */
     padding: 10px;
+    /* Linha 81: Preenchimento interno para o texto. */
     border-radius: 6px;
+    /* Linha 82: Cantos arredondados. */
     color: #bff;
+    /* Linha 83: Cor do texto digitado. */
     font-size: 15px;
+    /* Linha 84: Tamanho da fonte. */
     outline: none;
+    /* Linha 85: Remove a borda de foco padrão do navegador. */
     transition: 0.3s;
+    /* Linha 86: Prepara para uma transição suave (usada no :focus). */
 }
 
 .glitch-input:focus {
+    /* Linha 89: Estilos aplicados quando o campo está focado (o usuário está digitando). */
     box-shadow: 0 0 10px #18ffff;
+    /* Linha 90: Adiciona um brilho forte para indicar que o campo está ativo. */
 }
 
 /* BOTÃO */
+/* Linha 93: Estilos para o botão de envio ("ENTRAR"). */
 .submit-btn {
+    /* Linha 95: Estilos base do botão. */
     width: 100%;
+    /* Linha 96: Ocupa toda a largura do cartão. */
     margin-top: 10px;
+    /* Linha 97: Margem acima. */
     padding: 12px;
+    /* Linha 98: Preenchimento interno. */
     border: none;
+    /* Linha 99: Remove a borda padrão. */
     background: #18ffff;
+    /* Linha 100: Fundo ciano brilhante. */
     color: black;
+    /* Linha 101: Texto preto para contraste. */
     font-weight: bold;
+    /* Linha 102: Texto em negrito. */
     font-size: 16px;
+    /* Linha 103: Tamanho da fonte. */
     border-radius: 6px;
+    /* Linha 104: Cantos arredondados. */
     cursor: pointer;
+    /* Linha 105: Transforma o cursor em um ponteiro ao passar por cima. */
     box-shadow: 0 0 12px #18ffff;
+    /* Linha 106: Brilho inicial. */
     transition: 0.2s;
+    /* Linha 107: Transição suave para o efeito :hover. */
 }
 
 .submit-btn:hover {
+    /* Linha 110: Estilos ao passar o mouse sobre o botão. */
     background: #0ff;
+    /* Linha 111: Cor de fundo ligeiramente mais clara/brilhante. */
     box-shadow: 0 0 20px #18ffff;
+    /* Linha 112: Aumenta o brilho. */
 }
 
 .error-msg {
+    /* Linha 115: Estilos para a mensagem de erro de login. */
     margin-top: 10px;
+    /* Linha 116: Espaçamento acima. */
     text-align: center;
+    /* Linha 117: Centraliza o texto. */
     color: #ff5050;
+    /* Linha 118: Cor vermelha para indicar erro. */
     font-size: 14px;
+    /* Linha 119: Tamanho da fonte. */
     min-height: 18px;
+    /* Linha 120: Garante que a área ocupe algum espaço, mesmo vazia (evita que elementos se movam quando o erro aparecer). */
 }
 
 /* ANIMAÇÃO loader desaparecer */
+/* Linha 123: Estilos para a animação de esconder o loader após o login. */
 .loader-hide {
+    /* Linha 125: Classe adicionada pelo JavaScript. */
     animation: hideLoader 1s forwards;
+    /* Linha 126: Aplica a animação de esconder por 1 segundo. */
 }
 
 @keyframes hideLoader {
+    /* Linha 129: Definição da animação 'hideLoader'. */
     to {
+        /* Linha 131: Estado final da animação. */
         opacity: 0;
+        /* Linha 132: Torna o loader transparente. */
         visibility: hidden;
+        /* Linha 133: Remove o loader do fluxo do documento e impede cliques. */
     }
 }
 
 /* ===================== HERO / CABEÇALHO ===================== */
+/* Linha 137: Estilos para a seção principal da página (após o login). */
 
 .hero-section {
+    /* Linha 139: Estilos para o cabeçalho. */
     padding: 60px 20px;
+    /* Linha 140: Preenchimento (vertical e horizontal). */
     text-align: center;
+    /* Linha 141: Centraliza o texto e elementos. */
 }
 
 .hero-section h1 {
+    /* Linha 144: Estilos para o título H1 do museu. */
     font-size: 40px;
+    /* Linha 145: Tamanho da fonte. */
     letter-spacing: 2px;
+    /* Linha 146: Espaçamento de letras. */
     margin-bottom: 10px;
+    /* Linha 147: Espaço abaixo. */
 }
 
 .subtitle {
+    /* Linha 150: Estilos para o texto do subtítulo. */
     font-size: 16px;
+    /* Linha 151: Tamanho da fonte. */
     opacity: 0.8;
+    /* Linha 152: Leve transparência para ser menos dominante. */
 }
 
 #toggle-future-mode {
+    /* Linha 155: Estilos para o botão de alternância de modo (ID). */
     margin-top: 25px;
+    /* Linha 156: Espaçamento acima. */
     padding: 12px 20px;
+    /* Linha 157: Preenchimento do botão. */
     background: #181818;
+    /* Linha 158: Fundo escuro. */
     border: 1px solid #18ffff60;
+    /* Linha 159: Borda fina ciano. */
     color: #18ffff;
+    /* Linha 160: Cor do texto ciano. */
     cursor: pointer;
+    /* Linha 161: Cursor de ponteiro. */
     border-radius: 8px;
+    /* Linha 162: Cantos arredondados. */
     transition: 0.2s;
+    /* Linha 163: Transição suave para o efeito hover. */
 }
 
 #toggle-future-mode:hover {
+    /* Linha 166: Efeito ao passar o mouse. */
     background: #111;
+    /* Linha 167: Fundo ligeiramente mais escuro. */
     box-shadow: 0 0 15px #18ffff;
+    /* Linha 168: Brilho. */
 }
 
 /* ===================== CARDS ===================== */
+/* Linha 171: Estilos para os cartões de objetos futuristas. */
 
 .futuristic-objects {
+    /* Linha 173: Contêiner que contém todos os cartões. */
     display: flex;
+    /* Linha 174: Usa Flexbox para organizar os cartões. */
     justify-content: center;
+    /* Linha 175: Centraliza os cartões horizontalmente. */
     gap: 30px;
+    /* Linha 176: Espaçamento entre os cartões. */
     padding: 40px 20px;
+    /* Linha 177: Preenchimento interno. */
 }
 
 .object-card {
+    /* Linha 180: Estilos base para cada cartão de objeto. */
     background: #111;
+    /* Linha 181: Fundo escuro. */
     padding: 20px;
+    /* Linha 182: Preenchimento interno. */
     width: 280px;
+    /* Linha 183: Largura fixa do cartão. */
     border-radius: 12px;
+    /* Linha 184: Cantos arredondados. */
     border: 1px solid #18ffff40;
+    /* Linha 185: Borda ciano. */
     box-shadow: 0 0 12px #18ffff30;
+    /* Linha 186: Sombra/brilho sutil. */
     text-align: center;
+    /* Linha 187: Centraliza o conteúdo (texto e imagens). */
     transition: 0.3s ease;
+    /* Linha 188: Transição suave para transformações e hover. */
 }
 
 .object-card img {
+    /* Linha 191: Estilos para as imagens dentro dos cartões. */
     width: 140px;
+    /* Linha 192: Largura fixa da imagem. */
     height: auto;
+    /* Linha 193: Mantém a proporção da imagem. */
     margin-bottom: 15px;
+    /* Linha 194: Espaço abaixo da imagem. */
 }
 
 /* ===================== TIMELINE ===================== */
+/* Linha 197: Estilos para a seção de linha do tempo. */
 
 .timeline-section {
+    /* Linha 199: Estilos da seção. */
     margin-top: 40px;
+    /* Linha 200: Espaçamento acima. */
     text-align: center;
+    /* Linha 201: Centraliza o título. */
 }
 
 .timeline {
+    /* Linha 204: Contêiner da barra de tempo. */
     display: flex;
+    /* Linha 205: Usa Flexbox. */
     align-items: center;
+    /* Linha 206: Alinha verticalmente os elementos (anos e barra). */
     justify-content: center;
+    /* Linha 207: Centraliza a linha do tempo horizontalmente. */
     gap: 15px;
+    /* Linha 208: Espaçamento entre os elementos (anos e barra). */
 }
 
 .timeline-bar {
+    /* Linha 211: Estilos para a barra visual da linha do tempo. */
     width: 200px;
+    /* Linha 212: Largura da barra. */
     height: 4px;
+    /* Linha 213: Altura fina da barra. */
     background: #18ffff;
+    /* Linha 214: Cor ciano. */
     box-shadow: 0 0 10px #18ffff;
+    /* Linha 215: Brilho ciano. */
 }
 
 .year {
+    /* Linha 218: Estilos para os textos dos anos ("2025", "2050"). */
     font-size: 18px;
+    /* Linha 219: Tamanho da fonte. */
 }
 
 /* ===================== ANIMAÇÕES ===================== */
+/* Linha 222: Definições das animações @keyframes. */
 
 @keyframes cardGlow {
+    /* Linha 224: Animação de brilho pulsante para o cartão de login. */
     from {
+        /* Linha 226: Estado inicial (brilho menor). */
         box-shadow: 0 0 10px #18ffff80;
     }
     to {
+        /* Linha 229: Estado final (brilho maior). Alterna entre estes dois. */
         box-shadow: 0 0 20px #18ffffc0;
     }
 }
 
 @keyframes fadeIn {
+    /* Linha 234: Animação de fade-in para o corpo da página. */
     to {
+        /* Linha 236: Estado final (opacidade total). */
         opacity: 1;
     }
 }
 
 /* ===================== HOVER ANIMADO (REQUISITO DO PDF) ===================== */
+/* Linha 242: Seção de estilos de interação (hover). */
 
 .object-card:hover {
+    /* Linha 244: Efeito ao passar o mouse sobre os cartões de objeto. */
     transform: scale(1.05);
+    /* Linha 245: Aumenta o tamanho do cartão em 5%. */
     box-shadow: 0 0 20px #18ffff;
+    /* Linha 246: Aumenta o brilho. */
     animation: pulse 0.7s ease-in-out infinite alternate;
+    /* Linha 247: Aplica uma animação de pulso contínua enquanto o mouse estiver sobre o cartão. */
 }
 
 /* Pulso suave */
 @keyframes pulse {
+    /* Linha 252: Definição da animação 'pulse'. */
     from {
+        /* Linha 254: Ponto de partida (escala 1.05). */
         transform: scale(1.05);
     }
     to {
+        /* Linha 257: Ponto final (escala 1.09). O 'alternate' faz com que ele vá e volte continuamente. */
         transform: scale(1.09);
     }
 }
 
 /* ===================== MODO ENERGIA (Azul Neon) ===================== */
+/* Linha 262: Estilos que são ativados quando a classe 'future-mode' é adicionada ao <body> pelo JS. */
 
 .future-mode {
+    /* Linha 264: Estilos globais do Modo Energia. */
     background: linear-gradient(180deg, #00131a, #002028, #003844);
+    /* Linha 265: Fundo com um gradiente de azul profundo/escuro. */
     color: #b9f6ff;
+    /* Linha 266: Cor do texto geral (ciano claro). */
     transition: background 0.6s ease, color 0.3s ease;
+    /* Linha 267: Transição suave entre o modo normal e o modo energia. */
 }
 
 /* ---- HEADER ---- */
 .future-mode .hero-section {
+    /* Linha 271: Altera o fundo do cabeçalho dentro do Modo Energia. */
     background: transparent;
+    /* Linha 272: Torna o fundo transparente para ver o novo fundo do body. */
 }
 
 .future-mode .hero-section h1 {
+    /* Linha 275: Altera o título H1 no Modo Energia. */
     color: #66f7ff;
+    /* Linha 276: Cor ciano vibrante. */
     text-shadow: 0 0 15px #00eaff, 0 0 30px #00eaff;
+    /* Linha 277: Brilho duplo muito forte (efeito neon intenso). */
 }
 
 .future-mode .subtitle {
+    /* Linha 280: Altera o subtítulo. */
     color: #b9f6ff;
+    /* Linha 281: Cor ciano claro. */
 }
 
 /* ---- BOTÃO MODO ENERGIA ---- */
 .future-mode #toggle-future-mode {
+    /* Linha 285: Estilos do botão no Modo Energia. */
     background: #001e26;
+    /* Linha 286: Fundo azul muito escuro. */
     border: 1px solid #00f2ff;
+    /* Linha 287: Borda de neon azul. */
     color: #00eaff;
+    /* Linha 288: Texto azul neon. */
     box-shadow: 0 0 15px #00eaff;
+    /* Linha 289: Brilho azul intenso. */
 }
 
 .future-mode #toggle-future-mode:hover {
+    /* Linha 292: Efeito hover do botão no Modo Energia. */
     background: #00303c;
+    /* Linha 293: Fundo um pouco mais claro no hover. */
     box-shadow: 0 0 25px #00eaff;
+    /* Linha 294: Brilho ainda mais forte. */
 }
 
 /* ---- CARDS ---- */
 .future-mode .object-card {
+    /* Linha 298: Estilos dos cartões de objeto no Modo Energia. */
     background: #002c36;
+    /* Linha 299: Fundo azul escuro. */
     border: 1px solid #00eaff80;
+    /* Linha 300: Borda azul neon. */
     box-shadow: 0 0 20px #00d8ff50;
+    /* Linha 301: Brilho suave azul. */
     color: #bffaff;
+    /* Linha 302: Cor do texto. */
 }
 
 .future-mode .object-card:hover {
+    /* Linha 305: Efeito hover dos cartões no Modo Energia. */
     box-shadow: 0 0 30px #00eaff;
+    /* Linha 306: Brilho forte ao passar o mouse. */
     transform: scale(1.07);
+    /* Linha 307: Transforma um pouco mais do que o modo padrão para dar mais impacto. */
 }
 
 .future-mode .object-card img {
+    /* Linha 310: Estilos para as imagens dentro dos cartões no Modo Energia. */
     filter: drop-shadow(0 0 15px #00eaff);
+    /* Linha 311: Adiciona um brilho azul neon ao redor das imagens, fazendo-as parecerem iluminadas pelo novo tema. */
 }
 
 /* ---- TIMELINE ---- */
 .future-mode .timeline-bar {
+    /* Linha 315: Estilos da barra da linha do tempo no Modo Energia. */
     background: #00eaff;
+    /* Linha 316: Cor azul neon. */
     box-shadow: 0 0 20px #00eaff;
+    /* Linha 317: Brilho intenso. */
 }
 
 .future-mode .year {
+    /* Linha 320: Estilos para os textos dos anos no Modo Energia. */
     color: #7df9ff;
+    /* Linha 321: Cor ciano mais clara. */
 }
 
 /* ---- SCROLL LIBERADO ---- */
 .future-mode body {
+    /* Linha 325: Estilo extra de garantia no Modo Energia. */
     overflow: auto;
+    /* Linha 326: Garante que a barra de rolagem esteja visível se o conteúdo exceder a altura da tela. */
 }
